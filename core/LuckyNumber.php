@@ -57,10 +57,7 @@ class LuckyNumber
      */
     private function getCheckOnIdentity(int $number)
     {
-        if ($this->getIntFirstThree($number) == $this->getIntEndThree($number)) {
-            return $number;
-        }
-        return false;
+        return $this->getIntFirstThree($number) == $this->getIntEndThree($number) ? $number : false;
     }
 
     /**
