@@ -4,10 +4,9 @@ require_once 'vendor/autoload.php';
 
 use Core\LuckyNumber;
 
-//Сделать проверку чисел ввдененных на диапазон и на количество символов
-
 $modelLuckyNumber = new LuckyNumber();
-$modelLuckyNumber->gettingLuckyNumber(['first' => $argv[1], 'end' => $argv[2]])
-
-
+$listLuckyNumbers = $modelLuckyNumber->gettingLuckyNumber(['first' => $argv[1], 'end' => $argv[2]]);
 ?>
+
+<?php print_r($listLuckyNumbers); ?>
+Количество счастливых билетов: <?= $modelLuckyNumber->getCountLuckyTicket($listLuckyNumbers) . PHP_EOL; ?>
